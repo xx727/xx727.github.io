@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হোম পেজ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .title {
+            margin: 15px 10px 5px;
+            font-size: 18px;
+        }
+        .title a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .title a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- এখানে আপনার থাম্বনেইল ইমেজের লিংক দিন -->
+        <img class="thumbnail" src="https://via.placeholder.com/300x180" alt="Thumbnail">
+        
+        <!-- টাইটেলে ক্লিক করলে download.html পেজে নিয়ে যাবে -->
+        <h3 class="title">
+            <a href="download.html">স্যাম্পল ফাইল ডাউনলোড করতে এখানে ক্লিক করুন</a>
+        </h3>
+    </div>
+
+</body>
+</html>
