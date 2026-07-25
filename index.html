@@ -3,57 +3,801 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>হোম পেজ</title>
+    <title>AMB MODS</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ambmods.blogspot.com/">
+    <meta property="og:title" content="𝐀𝐌𝐁 𝐌𝐎𝐃𝐒 - 𝐅𝐫𝐞𝐞 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀𝐥𝐥 𝐀𝐧𝐝𝐫𝐨𝐢𝐝 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐀𝐩𝐩𝐬">
+    <meta property="og:description" content="প্রিমিয়াম অ্যাপস এবং ফাইল ডাউনলোড করার নিরাপদ কেন্দ্র।">
+    <meta property="og:image" content="https://i.ibb.co.com/j98SstTW/1784535073176.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .ad-space-320 {
+            width: 320px;
+            min-height: 50px;
+            margin: 0 auto 15px auto;
+            text-align: center;
+        }
+
+        .ad-space-300 {
+            width: 300px;
+            min-height: 250px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .native-ad-space {
+            width: 100%;
+            min-height: 100px;
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .section-title-btn {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            gap: 8px;
+            margin-bottom: 20px;
         }
-        .card {
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 300px;
-            overflow: hidden;
-            text-align: center;
-            padding-bottom: 15px;
-        }
-        .thumbnail {
+
+        .social-search-grid {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
             width: 100%;
-            height: 180px;
+        }
+
+        .grid-btn {
+            flex: 1;
+            padding: 12px 8px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .grid-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .tg-grid-btn {
+            background: linear-gradient(135deg, #0088cc, #006699);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+        }
+
+        .yt-grid-btn {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+        }
+
+        .search-grid-btn {
+            background: linear-gradient(135deg, #2b2b2b, #444444);
+            border: 1px solid #555;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-container {
+            display: none;
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .search-input-field {
+            width: 100%;
+            padding: 14px 45px 14px 15px;
+            background-color: #1e1e1e;
+            border: 1px solid #3d3d3d;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input-field:focus {
+            border-color: #00b0ff;
+        }
+
+        .search-icon-inside {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 16px;
+        }
+
+        .post-card {
+            background-color: #1e1e1e;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .image-container {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%;
+            background-color: #252525;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
-        .title {
-            margin: 15px 10px 5px;
-            font-size: 18px;
-        }
-        .title a {
-            color: #333;
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #000000;
             text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: color 0.3s;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            transition: background 0.3s ease;
+            margin-bottom: 10px;
         }
-        .title a:hover {
-            color: #007bff;
+
+        .blue-btn { background-color: #00b0ff; }
+        .blue-btn:hover { background-color: #0091ea; }
+        
+        .green-btn { background-color: #00e676; color: #000; }
+        .green-btn:hover { background-color: #00c853; }
+
+        .orange-btn { background-color: #ff9100; color: #000; }
+        .orange-btn:hover { background-color: #ff6d00; }
+
+        /* শেয়ার বাটন স্টাইল */
+        .share-main-btn { background-color: #333333; color: #ffffff; border: 1px solid #444; }
+        .share-main-btn:hover { background-color: #444444; }
+
+        /* সোশ্যাল শেয়ার অপশন প্যানেল */
+        .share-options-panel {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .share-icon-btn {
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .share-tg { background-color: #0088cc; }
+        .share-wa { background-color: #25d366; }
+        .share-fb { background-color: #1877f2; }
+        .share-cp { background-color: #607d8b; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .page-link {
+            background-color: #252525;
+            color: #ccc;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            border: 1px solid #3c3c3c;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .page-link.active {
+            background-color: #00b0ff;
+            color: #000;
+            border-color: #00b0ff;
+        }
+
+        #download-page {
+            display: none; 
+            background-color: #1e1e1e;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .file-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .file-table td {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .file-table td:first-child {
+            font-weight: bold;
+            color: #00b0ff;
+            width: 40%;
+        }
+
+        .timer-text {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px 0;
+            color: #ff9100;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- এখানে আপনার থাম্বনেইল ইমেজের লিংক দিন -->
-        <img class="thumbnail" src="https://via.placeholder.com/300x180" alt="Thumbnail">
+    <div class="container">
         
-        <!-- টাইটেলে ক্লিক করলে download.html পেজে নিয়ে যাবে -->
-        <h3 class="title">
-            <a href="download.html">স্যাম্পল ফাইল ডাউনলোড করতে এখানে ক্লিক করুন</a>
-        </h3>
+        <div class="ad-space-320">
+            <script>
+              atOptions = {
+                'key' : '6e295cb25c1fc4e49135171f640441ec',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/6e295cb25c1fc4e49135171f640441ec/invoke.js"></script>
+        </div>
+
+        <div id="home-page">
+            <div class="social-search-grid">
+                <a href="https://t.me/amb_premium_apps" target="_blank" class="grid-btn tg-grid-btn">
+                    <i class="fa-brands fa-telegram" style="font-size: 18px;"></i> টেলিগ্রাম
+                </a>
+                <a href="https://www.youtube.com/@amblivetech" target="_blank" class="grid-btn yt-grid-btn">
+                    <i class="fa-brands fa-youtube" style="font-size: 18px;"></i> ইউটিউব
+                </a>
+                <button class="grid-btn search-grid-btn" onclick="toggleSearchBox()">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 16px;"></i> সার্চ করুন
+                </button>
+            </div>
+
+            <div id="search-box-container" class="search-container">
+                <input type="text" id="search-input" class="search-input-field" placeholder="এখানে অ্যাপ বা ফাইলের নাম লিখুন..." oninput="searchPosts()">
+                <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+            </div>
+
+            <button class="section-title-btn">
+                <i class="fa-solid fa-fire"></i> নতুন পোস্ট গুলো দেখুন
+            </button>
+
+            <div id="posts-container"></div>
+            <div class="pagination" id="pagination-container"></div>
+
+            <div class="native-ad-space">
+                <script async="async" data-cfasync="false" src="https://pl29634924.effectivecpmnetwork.com/fc65c8a838393ae5421b71db6840081a/invoke.js"></script>
+                <div id="container-fc65c8a838393ae5421b71db6840081a"></div>
+            </div>
+        </div>
+
+        <div id="download-page">
+            <button class="section-title-btn">
+                <i class="fa-solid fa-cloud-arrow-down"></i> ফাইল ডাউনলোড কেন্দ্র
+            </button>
+
+            <h3 id="target-post-title" class="post-title" style="text-align: center;">ফাইল এর নাম</h3>
+            
+            <table class="file-table">
+                <tr>
+                    <td>ফাইলের নাম:</td>
+                    <td id="target-file-name">Loading...</td>
+                </tr>
+                <tr>
+                    <td>ফাইল সাইজ:</td>
+                    <td id="target-file-size">Loading...</td>
+                </tr>
+                <tr>
+                    <td>নিরাপত্তা:</td>
+                    <td><i class="fa-solid fa-shield-halved" style="color:#00e676;"></i> ১০০% সুরক্ষিত</td>
+                </tr>
+            </table>
+
+            <div class="ad-space-300">
+                <script>
+                  atOptions = {
+                    'key' : '4e2278fc8b84ea1ea3699dc43f25f0b6',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/4e2278fc8b84ea1ea3699dc43f25f0b6/invoke.js"></script>
+            </div>
+
+            <button id="action-btn" class="btn orange-btn" onclick="startVerification()">
+                <i class="fa-solid fa-gear fa-spin"></i> Generate Download Link
+            </button>
+
+            <div id="timer-container" class="timer-text" style="display: none;">
+                অনুগ্রহ করে <span id="countdown-number">১০</span> সেকেন্ড অপেক্ষা করুন...
+            </div>
+
+            <a id="final-download-btn" href="#" class="btn green-btn" style="display: none;">
+                <i class="fa-solid fa-circle-down"></i> Download Now (সরাসরি ফাইল ডাউনলোড)
+            </a>
+
+            <button class="btn share-main-btn" onclick="toggleSharePanel()">
+                <i class="fa-solid fa-share-nodes"></i> এই পোস্টটি শেয়ার করুন
+            </button>
+            
+            <div class="share-options-panel" id="download-page-share-panel">
+                <a id="share-link-tg" href="#" target="_blank" class="share-icon-btn share-tg">
+                    <i class="fa-brands fa-telegram"></i>Telegram
+                </a>
+                <a id="share-link-wa" href="#" target="_blank" class="share-icon-btn share-wa">
+                    <i class="fa-brands fa-whatsapp"></i>WhatsApp
+                </a>
+                <a id="share-link-fb" href="#" target="_blank" class="share-icon-btn share-fb">
+                    <i class="fa-brands fa-facebook"></i>Facebook
+                </a>
+                <button class="share-icon-btn share-cp" onclick="copyToClipboard()">
+                    <i class="fa-solid fa-link"></i>Copy Link
+                </button>
+            </div>
+            
+            <button class="btn blue-btn" style="margin-top: 10px; background-color: #333; color: #fff;" onclick="goToHome()">
+                <i class="fa-solid fa-arrow-left"></i> হোম পেজে ফিরে যান
+            </button>
+
+            <div class="native-ad-space" id="download-page-ad-container"></div>
+        </div>
+
     </div>
+
+    <script>
+    const postsData = [
+    {
+            title: "Imo - Premium - v2026.06.1051",
+            image: "https://i.ibb.co.com/BKLDJyQG/Imo-Premium.png",
+            downloadUrl: "https://www.mediafire.com/file/qhdxklp3m2fe5s4/Imo_-_Premium_-_v2026.06.1051.apk/file",
+            fileSize: "141.83 MB"
+        },
+    {
+            title: "AI Chat - Premium - v124.0",
+            image: "https://i.ibb.co.com/jvZnMssv/AI-Chat-Premium-v124-0.png",
+            downloadUrl: "https://www.mediafire.com/file/46mdad03ebu556r/AI_Chat_-_Premium_-_v124.0.apk/file",
+            fileSize: "115.97 MB"
+        },
+      {
+            title: "Remini Premium - v3.7.1377.202522873 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/Hp9PZTj1/Remini-Premium-Apps-Download-Free.png",
+            downloadUrl: "https://www.mediafire.com/file/jjvji4gucof6t2w/Remini_Premium_-_v3.7.1377.202522873.apk/file",
+            fileSize: "161.42 MB"
+        },
+      {
+            title: "Picsart Gold - V30.3.2 - MOD APK - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/67Bq871p/file-0000000063987208948b5bfd09ab0d90.png",
+            downloadUrl: "https://www.mediafire.com/file/5mg2luv9ygvppcf/Picsart_Gold_-_V30.3.2_-_MOD_APK_-_%2528_Premium_Unlocked_%2529.apk/file",
+            fileSize: "79.57 MB"
+        },
+        {
+            title: "MT Manager Official - v2.26.5 - ( All Feature Unlocked )",
+            image: "https://i.ibb.co.com/yBmWTRH0/file-00000000906472089cbce5f1563cca0c.png",
+            downloadUrl: "https://www.mediafire.com/file/i99ogadprgss76u/MT_Manager_Official_-_v2.26.5_-_%2528_All_Feature_Unlocked_%2529.apk/file",
+            fileSize: "29.60 MB"
+        },
+        {
+            title: "InShot Pro - v2.219.1545 - ( All Feature Unlocked )",
+            image: "https://i.ibb.co.com/Z1kJntL4/1783501623490.png",
+            downloadUrl: "https://www.mediafire.com/file/fg11ryx8j7p3wnk/InShot_Pro_-_v2.219.1545_-_%2528_All_Feature_Unlocked_%2529.apk/file",
+            fileSize: "83.11 MB"
+        },
+        {
+            title: "Telegram Premium - V12_8_3",
+            image: "https://i.ibb.co.com/wFdcmdTq/file-00000000240872069d1c2bab30840bb2.png",
+            downloadUrl: "https://www.mediafire.com/file/iyehg9babib4v4a/Telegram+Premium+-+V12_8_3.apk/file",
+            fileSize: "55 MB"
+        },
+        {
+            title: "KineMaster Pro V8.1.11.36528.GP ( No Watermark )",
+            image: "https://i.ibb.co.com/LXxM0PS2/file-00000000720871fa8e2cdddbc8f0d5f7.png", 
+            downloadUrl: "https://www.mediafire.com/file/xoxl43c6zh7scdp/KineMaster_Pro_V8.1.11.36528.GP_%2528_No_Watermark_%2529.apk/file",
+            fileSize: "141 MB"
+        },
+        {
+            title: "CapCut Pro - v18.5.0 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/bjYZmTVq/file-000000000eec71fa8923c87dda71c493.png",
+            downloadUrl: "https://www.mediafire.com/file/0oilkjgyuxjin52/CapCut_Pro_-_v18.5.0_-_%2528_Premium_Unlocked_%2529.apk/file",
+            fileSize: "276.24 MB"
+        },
+        {
+            title: "YouTube Pro - V5.5.80.509 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/mC620PVR/file-00000000caac71fa9435b38f13941a55.png",
+            downloadUrl: "https://www.mediafire.com/file/s94zpc51fz6xpi1/YouTube+Pro+-+V5.5.80.509+-+(+Premium+Unlocked+).apk/file",
+            fileSize: "20 MB"
+        },
+        {
+            title: "Clone App Mod - V4.1.6 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/35s0QRNF/file-00000000d2b87207a1edd8b2a5a0951e.jpg",
+            downloadUrl: "https://www.mediafire.com/file/bwxdxv7536p7y6o/Clone+App+Mod+-+V4.1.6+-+(+Premium+Unlocked+).apk/file",
+            fileSize: "55 MB"
+        },
+        {
+            title: "PixelLab Mod Apk - v2.1.9 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/BHS43Rg8/file-00000000b01c7208a561a2665deccc82.png",
+            downloadUrl: "https://www.mediafire.com/file/lwjvle2a8ef5vi3/PixelLab+Mod+Apk+-+v2.1.9+-+(+Premium+Unlocked+).apk/file",
+            fileSize: "39.56 MB"
+        },
+        {
+            title: "Snaptube Mod - v7.58.1.75872701 - ( Premium Unlocked )",
+            image: "https://i.ibb.co.com/sJHVW2mD/1783500410953.png",
+            downloadUrl: "https://www.mediafire.com/file/vrdkzmo2ph45r46/Snaptube_Mod_-_v7.58.1.75872701_-_%2528_Premium_Unlocked_%2529.apk/file",
+            fileSize: "24.99 MB"
+        }
+    ];
+
+    const postsPerPage = 5; 
+    let currentPage = 1;
+    let activeDownloadUrl = "";
+    let currentPostTitle = "";
+    let currentPostImage = "";
+
+    const postCodeMap = {};
+    const codeToIndexMap = {};
+
+    function generateFixedCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = (hash << 5) - hash + char;
+            hash |= 0;
+        }
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let code = "";
+        let absHash = Math.abs(hash);
+        
+        while (absHash > 0 && code.length < 6) {
+            code += chars.charAt(absHash % chars.length);
+            absHash = Math.floor(absHash / chars.length);
+        }
+        
+        while (code.length < 6) {
+            code += "x";
+        }
+        return code;
+    }
+
+    postsData.forEach((post, index) => {
+        let code = generateFixedCode(post.title);
+        let counter = 1;
+        while (codeToIndexMap[code] !== undefined) {
+            code = generateFixedCode(post.title + counter);
+            counter++;
+        }
+        postCodeMap[index] = code;
+        codeToIndexMap[code] = index;
+    });
+
+    function toggleSharePanel() {
+        const panel = document.getElementById('download-page-share-panel');
+        panel.style.display = (panel.style.display === "grid") ? "none" : "grid";
+    }
+
+    function makeUnicodeBold(text) {
+        const normalChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const boldChars   = "𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗";
+        
+        return text.split('').map(char => {
+            const index = normalChars.indexOf(char);
+            return index !== -1 ? boldChars.substr(index * 2, 2) : char;
+        }).join('');
+    }
+
+    function copyToClipboard() {
+        const currentUrl = window.location.href;
+        navigator.clipboard.writeText(currentUrl).then(() => {
+            alert("পোস্টের ডাউনলোড লিংক কপি হয়েছে!");
+            toggleSharePanel();
+        }).catch(err => {
+            alert("লিংক কপি করা যায়নি, অনুগ্রহ করে ম্যানুয়ালি কপি করুন।");
+        });
+    }
+
+    function generatePostHTML(post, realIndex) {
+        return `
+            <div class="post-title">${post.title}</div>
+            <div class="image-container">
+                <img src="${post.image}" alt="${post.title}">
+            </div>
+            <button class="btn blue-btn" onclick="navigateToDownload(${realIndex})" style="margin-bottom:0;">
+                <i class="fa-solid fa-circle-arrow-down"></i> ডাউনলোড করতে ক্লিক করুন
+            </button>
+        `;
+    }
+
+    function displayPosts(page) {
+        const postsContainer = document.getElementById('posts-container');
+        postsContainer.innerHTML = "";
+        page--;
+
+        const start = postsPerPage * page;
+        const end = start + postsPerPage;
+        const paginatedItems = postsData.slice(start, end);
+
+        paginatedItems.forEach((post, index) => {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post-card');
+            const realIndex = start + index;
+            postElement.innerHTML = generatePostHTML(post, realIndex);
+            postsContainer.appendChild(postElement);
+        });
+    }
+
+    function setupPagination() {
+        const paginationContainer = document.getElementById('pagination-container');
+        paginationContainer.innerHTML = "";
+
+        const pageCount = Math.ceil(postsData.length / postsPerPage);
+        
+        for (let i = 1; i <= pageCount; i++) {
+            const btn = document.createElement('button');
+            btn.classList.add('page-link');
+            btn.innerText = "পেজ " + i;
+            
+            if (currentPage === i) btn.classList.add('active');
+
+            btn.addEventListener('click', function () {
+                currentPage = i;
+                displayPosts(currentPage);
+                document.querySelector('.page-link.active').classList.remove('active');
+                btn.classList.add('active');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+
+            paginationContainer.appendChild(btn);
+        }
+    }
+
+    function toggleSearchBox() {
+        const searchContainer = document.getElementById('search-box-container');
+        const searchInput = document.getElementById('search-input');
+        
+        if (searchContainer.style.display === "none" || searchContainer.style.display === "") {
+            searchContainer.style.display = "block";
+            searchInput.focus();
+        } else {
+            searchContainer.style.display = "none";
+            searchInput.value = "";
+            displayPosts(currentPage); 
+            document.getElementById('pagination-container').style.display = "flex"; 
+        }
+    }
+
+    function searchPosts() {
+        const query = document.getElementById('search-input').value.toLowerCase().trim();
+        const postsContainer = document.getElementById('posts-container');
+        const paginationContainer = document.getElementById('pagination-container');
+        
+        if (query === "") {
+            displayPosts(currentPage);
+            paginationContainer.style.display = "flex";
+            return;
+        }
+
+        const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
+        
+        postsContainer.innerHTML = "";
+        paginationContainer.style.display = "none"; 
+
+        if (filteredPosts.length === 0) {
+            postsContainer.innerHTML = `<div style="text-align:center; padding:30px; color:#aaa; font-size:15px;">দুঃখিত! এই নামে কোনো ফাইল পাওয়া যায়নি।</div>`;
+            return;
+        }
+
+        filteredPosts.forEach((post) => {
+            const realIndex = postsData.findIndex(p => p.title === post.title);
+            const postElement = document.createElement('div');
+            postElement.classList.add('post-card');
+            postElement.innerHTML = generatePostHTML(post, realIndex);
+            postsContainer.appendChild(postElement);
+        });
+    }
+
+    function navigateToDownload(index) {
+        const randomCode = postCodeMap[index];
+        history.pushState({postIndex: index}, "", `?post=${randomCode}`);
+        openDownloadPage(index);
+    }
+
+    function openDownloadPage(index) {
+    const selectedPost = postsData[index];
+    activeDownloadUrl = selectedPost.downloadUrl;
+    currentPostTitle = selectedPost.title;
+    currentPostImage = selectedPost.image; 
+
+    document.getElementById('target-post-title').innerText = selectedPost.title;
+    document.getElementById('target-file-name').innerText = selectedPost.title.split(" Download")[0];
+    document.getElementById('target-file-size').innerText = selectedPost.fileSize || "N/A";
+
+    document.getElementById('action-btn').style.display = "flex";
+    document.getElementById('timer-container').style.display = "none";
+    document.getElementById('final-download-btn').style.display = "none";
+    document.getElementById('download-page-share-panel').style.display = "none"; 
+
+    document.getElementById('home-page').style.display = "none";
+    document.getElementById('download-page').style.display = "block";
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    loadDownloadPageAd();
+
+    // লিংকের শেষ থেকে &m=1 রিমুভ করার লজিক
+    const currentUrl = window.location.href.replace(/[?&]m=1/, '');
+    const boldTitle = makeUnicodeBold(selectedPost.title);
+    
+    // টেলিগ্রাম শেয়ার টেক্সট (১০০% নিখুঁত ফরম্যাট)
+    const tgShareText = encodeURIComponent("🔥 " + boldTitle + "\n\n📥 ফাইলটি ডাউনলোড করতে নিচের লিংকে ক্লিক করুন! 🔰\n\n" + currentUrl + "\n\n");
+    document.getElementById('share-link-tg').href = "https://t.me/share/url?url=&text=" + tgShareText;
+    
+    // হোয়াটসঅ্যাপ ও ফেসবুক শেয়ার লিংক
+    const generalShareText = encodeURIComponent("🔥 ডাউনলোড করুন: " + boldTitle + "\n🔗 ডাউনলোড লিংক: " + currentUrl);
+    document.getElementById('share-link-wa').href = "https://api.whatsapp.com/send?text=" + generalShareText;
+    document.getElementById('share-link-fb').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+}
+
+    function loadDownloadPageAd() {
+        const adContainer = document.getElementById('download-page-ad-container');
+        if (!adContainer) return;
+        adContainer.innerHTML = ""; 
+
+        const scriptTag = document.createElement('script');
+        scriptTag.async = true;
+        scriptTag.setAttribute('data-cfasync', 'false');
+        scriptTag.src = "https://pl29634924.effectivecpmnetwork.com/fc65c8a838393ae5421b71db6840081a/invoke.js";
+
+        const placeholderDiv = document.createElement('div');
+        placeholderDiv.id = "container-fc65c8a838393ae5421b71db6840081a";
+
+        adContainer.appendChild(scriptTag);
+        adContainer.appendChild(placeholderDiv);
+    }
+
+    function startVerification() {
+        document.getElementById('action-btn').style.display = "none"; 
+        document.getElementById('timer-container').style.display = "block"; 
+
+        let timeLeft = 10; 
+        const countdownNumber = document.getElementById('countdown-number');
+
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            countdownNumber.innerText = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer-container').style.display = "none"; 
+                
+                const finalBtn = document.getElementById('final-download-btn');
+                finalBtn.href = activeDownloadUrl;
+                finalBtn.setAttribute('target', '_blank'); 
+                finalBtn.style.display = "flex"; 
+            }
+        }, 1000);
+    }
+
+    function goToHome() {
+        history.pushState(null, "", window.location.pathname);
+        checkRoute();
+    }
+
+    function checkRoute() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const postCode = urlParams.get('post');
+        
+        if (postCode !== null) {
+            const index = codeToIndexMap[postCode];
+            if (index !== undefined && postsData[index]) {
+                openDownloadPage(index);
+                return;
+            }
+        }
+        document.getElementById('download-page').style.display = "none";
+        document.getElementById('home-page').style.display = "block";
+    }
+
+    window.addEventListener('popstate', checkRoute);
+    
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', checkRoute);
+    } else {
+        checkRoute();
+    }
+
+    displayPosts(currentPage);
+    setupPagination();
+</script>
 
 </body>
 </html>
