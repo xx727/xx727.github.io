@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পোস্ট ১ - ডাউনলোড পেজ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .ad-320x50 {
+            width: 320px;
+            height: 50px;
+            margin: 10px auto 20px;
+            background-color: #1e293b;
+            border: 1px dashed #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .ad-300x200 {
+            width: 300px;
+            height: 200px;
+            margin: 25px auto;
+            background-color: #1e293b;
+            border: 1px dashed #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .post-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            margin-bottom: 25px;
+        }
+
+        .thumbnail-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .download-btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 1px solid #38bdf8;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ১. Adsterra 320x50 ব্যানার এড -->
+        <div class="ad-320x50">
+            <!-- Adsterra script 320x50 here -->
+            <span style="font-size: 11px; color: #64748b;">Adsterra 320x50 Ad</span>
+        </div>
+
+        <!-- ২. টাইটেল -->
+        <h1 class="post-title">
+            প্রিমিয়াম অ্যাপ বা গেমের বিস্তারিত ও ডাউনলোডের নিয়মাবলী [২০২৬ সংস্করণ]
+        </h1>
+
+        <!-- ৩. থাম্বনেইল -->
+        <div class="thumbnail-wrapper">
+            <img src="https://i.ibb.co/6y4jG04/sample-thumb.jpg" alt="Post 1 Thumbnail">
+        </div>
+
+        <!-- ৪. ডাউনলোড নাউ বাটন -->
+        <div class="download-btn-container">
+            <a href="YOUR_FILE_1_DOWNLOAD_LINK" class="btn-download" download>
+                📥 Download Now
+            </a>
+        </div>
+
+        <!-- ৫. Adsterra 300x200 ব্যানার এড -->
+        <div class="ad-300x200">
+            <!-- Adsterra script 300x200 here -->
+            <span style="font-size: 11px; color: #64748b;">Adsterra 300x200 Ad</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
