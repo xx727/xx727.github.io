@@ -26,7 +26,7 @@
         .container {
             width: 100%;
             max-width: 600px;
-            text-align: center; /* সব টেক্সট ও উপাদান মাঝখানে আনবে */
+            text-align: center;
         }
 
         /* Adsterra 320x50 Ad Placement */
@@ -72,7 +72,7 @@
         .thumbnail-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio (1280x720) */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             overflow: hidden;
         }
 
@@ -144,5 +144,24 @@
 
     </div>
 
+    <!-- URL এবং ইউনিক কোড হ্যান্ডেল করার স্ক্রিপ্ট -->
+    <script>
+        document.querySelectorAll('a.post-title-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const pagePath = this.getAttribute('href');
+                const pageKey = 'saved_code_' + pagePath;
+                
+                // যদি আগে থেকে এই পেজের কোড না থাকে তবে তৈরি করবে
+                if (!localStorage.getItem(pageKey)) {
+                    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    let randomCode = '';
+                    for (let i = 0; i < 6; i++) {
+                        randomCode += chars.charAt(Math.floor(Math.random() * chars.length));
+                    }
+                    localStorage.setItem(pageKey, randomCode);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
