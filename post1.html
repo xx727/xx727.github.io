@@ -143,5 +143,31 @@
 
     </div>
 
+    <!-- URLRewrite script: post1-এর জন্য নির্দিষ্ট র্যান্ডম কোড জেনারেট ও ফিক্সড রাখবে -->
+    <script>
+      (function() {
+        // বর্তমান পেজের নাম শনাক্তকরণ
+        const pagePath = window.location.pathname.split('/').pop() || 'post1.html';
+        const pageKey = 'saved_code_' + pagePath;
+        
+        // LocalStorage থেকে পূর্বের কোড চেক করা
+        let randomCode = localStorage.getItem(pageKey);
+
+        // সেভ না থাকলে নতুন ৬ অক্ষরের কোড (a-z, A-Z, 0-9) জেনারেট করবে
+        if (!randomCode) {
+          const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          randomCode = '';
+          for (let i = 0; i < 6; i++) {
+            randomCode += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+          localStorage.setItem(pageKey, randomCode);
+        }
+
+        // URL পরিবর্তন করে https://xx727.github.io/post=xY2f8R ফরম্যাটে রূপান্তর
+        const newUrl = window.location.origin + '/post=' + randomCode;
+        window.history.replaceState(null, '', newUrl);
+      })();
+    </script>
+
 </body>
 </html>
