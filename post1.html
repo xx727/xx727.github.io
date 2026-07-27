@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xx727 - Download Page 1</title>
+    
+    <!-- মনিট্যাগ এড স্ক্রিপ্ট -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="264256" async data-cfasync="false"></script>
+
     <style>
         * {
             margin: 0;
@@ -26,7 +30,7 @@
         .container {
             width: 100%;
             max-width: 600px;
-            text-align: center; /* সেন্টারে রাখার জন্য */
+            text-align: center;
         }
 
         .ad-320x50 {
@@ -88,6 +92,7 @@
             margin: 25px 0;
         }
 
+        /* মূল ডাউনলোডের জন্য স্টাইল */
         .btn-download {
             display: inline-block;
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
@@ -101,12 +106,25 @@
             transition: all 0.3s ease;
             letter-spacing: 0.5px;
             border: 1px solid #38bdf8;
+            cursor: pointer;
         }
 
         .btn-download:hover {
             background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
             box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
             transform: translateY(-2px);
+        }
+
+        /* Open Now বাটনের স্টাইল (সবুজ কালার) */
+        .btn-download.open-ready {
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+            border-color: #34d399;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-download.open-ready:hover {
+            background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
         }
     </style>
 </head>
@@ -121,7 +139,7 @@
 
         <!-- ২. টাইটেল -->
         <h1 class="post-title">
-            একা পেয়ে ভাবিকে খেয়ে দিলো
+            প্রিমিয়াম অ্যাপ বা গেমের বিস্তারিত ও ডাউনলোডের নিয়মাবলী [২০২৬ সংস্করণ]
         </h1>
 
         <!-- ৩. থাম্বনেইল -->
@@ -129,11 +147,11 @@
             <img src="https://i.ibb.co/6y4jG04/sample-thumb.jpg" alt="Post 1 Thumbnail">
         </div>
 
-        <!-- ৪. ডাউনলোড নাউ বাটন -->
+        <!-- ৪. ডাউনলোড নাউ / ওপেন নাউ বাটন -->
         <div class="download-btn-container">
-            <a href="https://playmogo.com/d/3txyhh0587fw" class="btn-download" download>
-                📥 Download & Play
-            </a>
+            <button id="actionBtn" class="btn-download">
+                📥 Download Now
+            </button>
         </div>
 
         <!-- ৫. Adsterra 300x200 ব্যানার এড -->
@@ -143,17 +161,45 @@
 
     </div>
 
-    <!-- URLRewrite script: post1-এর জন্য নির্দিষ্ট র্যান্ডম কোড জেনারেট ও ফিক্সড রাখবে -->
     <script>
+      // আপনার আসল ফাইল লিঙ্কটি নিচে বসান (মিডিয়াফায়ার/গুগল ড্রাইভ)
+      const finalDownloadUrl = "https://www.mediafire.com/your-file-link-here";
+
+      let isAdTriggered = false;
+      const actionBtn = document.getElementById('actionBtn');
+
+      actionBtn.addEventListener('click', function() {
+        if (!isAdTriggered) {
+          // Monetag Interstitial Function চেক করা (জোন ২৫৪২৫৬ এর স্ট্যান্ডার্ড কল)
+          if (typeof show_264256 === 'function') {
+            show_264256().then(() => {
+              changeToOpenButton();
+            }).catch(() => {
+              changeToOpenButton();
+            });
+          } else {
+            // মনিট্যাগ স্ক্রিপ্ট ট্রিগার না হলেও বাটন পরিবর্তন হবে যাতে ইউজার আটকে না থাকে
+            changeToOpenButton();
+          }
+        } else {
+          // Open Now চাপ দিলে মূল ডাউনলোড পেজ নতুন ট্যাবে যাবে
+          window.open(finalDownloadUrl, '_blank');
+        }
+      });
+
+      function changeToOpenButton() {
+        isAdTriggered = true;
+        actionBtn.innerText = "🚀 Open Now";
+        actionBtn.classList.add('open-ready');
+      }
+
+      // URLRewrite Script: post1-এর জন্য নির্দিষ্ট র্যান্ডম কোড জেনারেট ও ফিক্সড রাখবে
       (function() {
-        // বর্তমান পেজের নাম শনাক্তকরণ
         const pagePath = window.location.pathname.split('/').pop() || 'post1.html';
         const pageKey = 'saved_code_' + pagePath;
         
-        // LocalStorage থেকে পূর্বের কোড চেক করা
         let randomCode = localStorage.getItem(pageKey);
 
-        // সেভ না থাকলে নতুন ৬ অক্ষরের কোড (a-z, A-Z, 0-9) জেনারেট করবে
         if (!randomCode) {
           const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
           randomCode = '';
@@ -163,7 +209,6 @@
           localStorage.setItem(pageKey, randomCode);
         }
 
-        // URL পরিবর্তন করে https://xx727.github.io/post=xY2f8R ফরম্যাটে রূপান্তর
         const newUrl = window.location.origin + '/post=' + randomCode;
         window.history.replaceState(null, '', newUrl);
       })();
